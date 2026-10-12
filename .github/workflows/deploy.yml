@@ -29,6 +29,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
 
       - name: Generate PWA icons
         run: node scripts/generate-icons.mjs
