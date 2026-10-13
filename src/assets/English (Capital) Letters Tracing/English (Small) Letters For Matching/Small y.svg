@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots) -->
+  <g stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M 145 160 L 145 240 Q 145 265, 195 265 Q 245 265, 245 240 L 245 160" />
+    <path d="M 245 240 L 245 345 C 245 390, 190 405, 165 375" />
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ذ') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Curved 'Daal' Shape -->
+    <path d="M 235 140 C 265 180, 265 240, 215 280 C 185 300, 140 300, 125 300" stroke-width="14" stroke-dasharray="10 14" />
+    <!-- Top Guide Nukta -->
+    <circle cx="205" cy="80" r="9" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>

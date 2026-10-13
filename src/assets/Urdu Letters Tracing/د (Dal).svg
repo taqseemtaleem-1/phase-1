@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'د') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Curved 'Daal' Shape -->
+    <path d="M 235 110 C 265 150, 265 210, 215 250 C 185 270, 140 270, 125 270" stroke-width="14" stroke-dasharray="10 14" />
+  </g>
+</svg>

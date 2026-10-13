@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'خ') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" fill="none">
+    <!-- Balanced Nastaliq Shape Body -->
+    <path d="M 130 115 L 250 115 C 190 150, 130 180, 130 260 C 130 370, 270 370, 285 260" stroke-width="14" stroke-linejoin="round" stroke-dasharray="10 14" />
+    <!-- Top Guide Nukta -->
+    <circle cx="190" cy="65" r="9" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>

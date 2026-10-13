@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots) -->
+  <g stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Descending Hook -->
+    <path d="M 220 178 L 220 300 C 220 330, 170 330, 160 320" />
+    <!-- Top Dot Guide -->
+    <circle cx="220" cy="120" r="13" fill="#FFFFFF" stroke="none" />
+  </g>
+</svg>

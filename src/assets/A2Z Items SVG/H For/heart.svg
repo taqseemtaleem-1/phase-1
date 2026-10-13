@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2497" viewBox="0 0 303 293.41" version="1.0">
+  <defs id="defs2499">
+    <filter id="filter3428">
+      <feGaussianBlur id="feGaussianBlur3430" stdDeviation="3.982787"/>
+    </filter>
+    <linearGradient id="linearGradient3482" y2="576" gradientUnits="userSpaceOnUse" y1="92" x2="742" x1="742">
+      <stop id="stop2543" stop-color="#f00" offset="0"/>
+      <stop id="stop2545" stop-color="#800000" offset="1"/>
+    </linearGradient>
+    <radialGradient id="radialGradient3484" gradientUnits="userSpaceOnUse" cy="507.68" cx="154.49" gradientTransform="matrix(-.11869 2.956 -2.58 -.10359 1797.5 -275.65)" r="89.498">
+      <stop id="stop2537" stop-color="#fff" stop-opacity=".8" offset="0"/>
+      <stop id="stop2539" stop-color="#fff" stop-opacity="0" offset="1"/>
+    </radialGradient>
+  </defs>
+  <g id="layer1" transform="translate(-359.56 -238.98)">
+    <g id="g3432" transform="matrix(.71925 -.12576 .12149 .74456 -37.972 235.44)">
+      <path id="path2604" filter="url(#filter3428)" fill="#808080" d="m666.96 125.24c-37.63-8.31-81.08-1.06-114.02 29.91-28.16 27.26-40.88 72.83-36.39 112.35 4.56 52.15 27.52 96.52 52.3 136.38 25.02 39.26 54.3 74.45 86.24 105.49 8.51 2.55 17.04-4.08 25.62-5.5 63.3-20.7 126.94-49.02 181.41-97.5 28.63-26.11 54.28-62.16 60.85-104.49 5.33-35.16-5.34-70.1-25.68-92.46-28.22-33.18-70.08-49.83-111.9-44.51-16.67 2.8-33.74 10.78-46.01 26.11-5.21-29.42-26.9-48.53-49.43-58.22-7.35-3.33-15.12-5.8-22.99-7.56z"/>
+      <path id="path2393" fill="#800000" d="m664.96 117.24c-37.63-8.31-81.08-1.06-114.02 29.91-28.16 27.26-40.88 72.83-36.39 112.35 4.56 52.15 27.52 96.52 52.3 136.38 25.02 39.26 54.3 74.45 86.24 105.49 8.51 2.55 17.04-4.08 25.62-5.5 63.3-20.7 126.94-49.02 181.41-97.5 28.63-26.11 54.28-62.16 60.85-104.49 5.33-35.16-5.34-70.1-25.68-92.46-28.22-33.18-70.08-49.83-111.9-44.51-16.67 2.8-33.74 10.78-46.01 26.11-5.21-29.42-26.9-48.53-49.43-58.22-7.35-3.33-15.12-5.8-22.99-7.56z"/>
+      <path id="path2383" fill="url(#linearGradient3482)" d="m663.63 123.01c-33.03-7.07-70.23-2.5-100.87 20.92-24.02 18.01-39.91 50.09-42.99 82.49-4.63 44.42 9.3 86.03 26.55 121.95 27.94 56.12 65.74 103.69 107.06 145.5 3.27 5.25 9.32 0.09 13.99-0.42 56.43-17.38 112.64-41.17 163.75-78.1 31.8-23.62 63.2-54.44 78.37-96.22 11.08-29.56 10.56-63.49-2.09-89.18-17.24-35.71-49.65-57.3-83.75-65.48-23.9-5.24-51.53-4.71-73.83 13.16-6.61 5.41-12.3 12.49-16.4 20.74 1.36-27-14.46-48.07-32.45-59.78-11.48-7.59-24.15-12.64-37.34-15.58z"/>
+      <path id="path2401" fill="url(#radialGradient3484)" d="m653.7 131.04c-41.51-10.16-89.71 10.06-108.65 49.12-18.64 40.69-12.73 88.49 4.86 128.35 15.09 34.26 33.77 67.42 56.59 97.25l116.19-205.05c-10.39-3.85-16.72-16.09-16.32-26.98-5.77-23.96-30.38-37.45-52.67-42.69z"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>heart</dc:title>
+        <dc:date>2008-08-11T22:08:25</dc:date>
+        <dc:description>clip art, clipart, colour, colour, heart, heart, image, love, love, media, png, public domain, red, red, svg, valentine, valentine, </dc:description>
+        <dc:source>http://openclipart.org/detail/18379/heart-by-sivvus</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>sivvus</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>colour</rdf:li>
+            <rdf:li>heart</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>love</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>red</rdf:li>
+            <rdf:li>svg</rdf:li>
+            <rdf:li>valentine</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

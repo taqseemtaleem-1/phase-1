@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ث') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" fill="none">
+    <!-- Boat Body -->
+    <path d="M 310 200 C 310 250, 290 280, 200 280 C 110 280, 90 250, 90 220" stroke-width="12" stroke-dasharray="10 14" />
+    <!-- 3 Nuktey Above (Guide Dots) -->
+    <circle cx="170" cy="160" r="8" fill="#9CA3AF" stroke="none" />
+    <circle cx="230" cy="160" r="8" fill="#9CA3AF" stroke="none" />
+    <circle cx="200" cy="120" r="8" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>

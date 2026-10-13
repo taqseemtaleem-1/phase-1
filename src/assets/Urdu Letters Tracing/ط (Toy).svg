@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ط') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Stroke 1: Vertical Alif -->
+    <path d="M 220 80 L 220 250" stroke-width="14" stroke-dasharray="10 14" />
+    <!-- Taller, Bigger Loop + Short Tail -->
+    <path d="M 220 250 C 220 160, 340 140, 300 220 C 275 260, 220 255, 180 250" stroke-width="14" stroke-dasharray="10 14" />
+  </g>
+</svg>

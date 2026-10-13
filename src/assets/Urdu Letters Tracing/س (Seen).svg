@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'س') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Teeth (Dandaney) + Open Round Belly -->
+    <path d="M 310 130 C 310 170, 275 170, 270 135 C 270 170, 235 170, 230 135 L 230 220 C 230 350, 90 350, 90 220 C 90 170, 120 160, 130 165" stroke-width="14" stroke-dasharray="10 14" />
+  </g>
+</svg>

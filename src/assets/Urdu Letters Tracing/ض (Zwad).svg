@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ض') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Oval Head + Open Round Belly -->
+    <path d="M 240 155 C 270 130, 310 130, 310 155 C 310 175, 260 175, 230 175 L 220 175 C 215 175, 210 150, 205 150 L 205 230 C 205 360, 70 360, 70 230 C 70 180, 100 170, 110 175" stroke-width="14" stroke-dasharray="10 14" />
+    <!-- Top Guide Nukta -->
+    <circle cx="270" cy="95" r="8" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>

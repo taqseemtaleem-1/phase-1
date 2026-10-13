@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ژ') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Main Body Shape -->
+    <path d="M 230 160 L 225 260 C 220 300, 180 330, 120 340" stroke-width="14" stroke-dasharray="10 14" />
+    <!-- 3 Guide Nukte Above -->
+    <circle cx="200" cy="115" r="8" fill="#9CA3AF" stroke="none" />
+    <circle cx="240" cy="115" r="8" fill="#9CA3AF" stroke="none" />
+    <circle cx="220" cy="80" r="8" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>

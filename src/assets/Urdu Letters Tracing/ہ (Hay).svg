@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ہ') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Authentic Urdu 'Gol Hey' Teardrop Shape -->
+    <path d="M 200 120 C 180 120, 140 180, 145 225 C 150 265, 185 285, 200 285 C 215 285, 250 265, 255 225 C 260 180, 220 120, 200 120" stroke-width="14" stroke-dasharray="10 14" />
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots) -->
+  <g stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Tall Vertical Stem with Curve -->
+    <path d="M 200 100 L 200 300 Q 200 330, 230 320" />
+    <!-- Horizontal Crossbar -->
+    <path d="M 150 190 L 250 190" />
+  </g>
+</svg>

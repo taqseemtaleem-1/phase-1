@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ش') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Teeth + Open Round Belly -->
+    <path d="M 310 150 C 310 190, 275 190, 270 155 C 270 190, 235 190, 230 155 L 230 240 C 230 370, 90 370, 90 240 C 90 190, 120 180, 130 185" stroke-width="14" stroke-dasharray="10 14" />
+    <!-- 3 Guide Nukte Above -->
+    <circle cx="250" cy="105" r="8" fill="#9CA3AF" stroke="none" />
+    <circle cx="290" cy="105" r="8" fill="#9CA3AF" stroke="none" />
+    <circle cx="270" cy="70" r="8" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>

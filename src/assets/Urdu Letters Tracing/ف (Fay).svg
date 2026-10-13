@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- 1. BASE DOTTED LETTER GUIDE (Grey Dots for 'ف') -->
+  <g stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Smooth Loop flowing into Wide Flat Be-like Body -->
+    <path d="M 285 180 C 310 160, 310 210, 280 210 C 255 210, 260 160, 290 180 C 305 210, 295 260, 280 260 L 120 260 C 90 260, 80 230, 90 200" stroke-width="14" stroke-dasharray="10 14" />
+    <!-- 1 Guide Nukta Above -->
+    <circle cx="285" cy="120" r="9" fill="#9CA3AF" stroke="none" />
+  </g>
+</svg>
