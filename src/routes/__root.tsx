@@ -9,7 +9,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, useRef, useCallback, type ReactNode } from "react"; // ← ✅ FIXED: Added useCallback
+import { useEffect, useState, useRef, useCallback, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -36,14 +36,12 @@ interface AudioRegistry {
   getActiveAudios: () => HTMLAudioElement[];
 }
 
-// ─── 🔥 STRICT AUDIO CLEANUP ──────────────────────────────────
 const createAudioRegistry = (): AudioRegistry => {
   const activeAudios = new Set<HTMLAudioElement>();
   let isCleaning = false;
 
   const cleanupAudio = (audio: HTMLAudioElement) => {
     try {
-      // 🔥 Remove all event listeners
       audio.onended = null;
       audio.onerror = null;
       audio.onplay = null;
@@ -56,44 +54,38 @@ const createAudioRegistry = (): AudioRegistry => {
       audio.onvolumechange = null;
       audio.onratechange = null;
       audio.ondurationchange = null;
-      
-      // 🔥 Stop playback
+
       if (!audio.paused) {
         audio.pause();
       }
-      
-      // 🔥 Reset audio — releases browser resources
+
       audio.currentTime = 0;
       audio.src = "";
       audio.load();
-      
-      // 🔥 Remove from DOM
+
       if (audio.parentNode) {
         audio.parentNode.removeChild(audio);
       }
-      
-    } catch (error) {
+    } catch {
       // Silently ignore cleanup errors
     }
   };
 
   const registerAudio = (audio: HTMLAudioElement): (() => void) => {
-    // 🔥 Don't add if already cleaned
     if (!audio || audio.src === "") return () => {};
-    
+
     activeAudios.add(audio);
-    
-    // 🔥 Auto-cleanup on audio end/error
+
     const cleanup = () => {
       if (activeAudios.has(audio)) {
         activeAudios.delete(audio);
         cleanupAudio(audio);
       }
     };
-    
+
     audio.onended = cleanup;
     audio.onerror = cleanup;
-    
+
     return () => {
       if (activeAudios.has(audio)) {
         activeAudios.delete(audio);
@@ -103,27 +95,26 @@ const createAudioRegistry = (): AudioRegistry => {
   };
 
   const registerAudios = (audios: HTMLAudioElement[]): (() => void) => {
-    const cleanups = audios.map(audio => registerAudio(audio));
+    const cleanups = audios.map((audio) => registerAudio(audio));
     return () => {
-      cleanups.forEach(cleanup => cleanup());
+      cleanups.forEach((cleanup) => cleanup());
     };
   };
 
   const cleanupAllAudio = () => {
     if (isCleaning) return;
     isCleaning = true;
-    
+
     try {
       const audios = Array.from(activeAudios);
-      audios.forEach(audio => {
+      audios.forEach((audio) => {
         activeAudios.delete(audio);
         cleanupAudio(audio);
       });
-      
-      // 🔥 Safety: Also clean any orphaned audio elements in DOM
+
       try {
-        const domAudios = document.querySelectorAll('audio');
-        domAudios.forEach(audio => {
+        const domAudios = document.querySelectorAll("audio");
+        domAudios.forEach((audio) => {
           try {
             if (!audio.paused) audio.pause();
             audio.currentTime = 0;
@@ -138,7 +129,6 @@ const createAudioRegistry = (): AudioRegistry => {
       } catch {
         // Silently ignore
       }
-      
     } finally {
       isCleaning = false;
     }
@@ -233,6 +223,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "A playful tablet learning app for kids." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+
+      // 🔥 PWA / Mobile web app
+      { name: "theme-color", content: "#16a34a" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Taqseem Taleem" },
+      { name: "application-name", content: "Taqseem Taleem" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -242,6 +240,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Amiri:wght@700&display=swap",
       },
       { rel: "stylesheet", href: appCss },
+
+      // 🔥 PWA / Manifest / Icons
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -275,7 +278,7 @@ function RootComponent() {
 
   // ─── 🔥 IDLE CLEANUP FUNCTION ──────────────────────────────
   const cleanupOnIdle = useCallback(() => {
-    console.log('🧹 Idle cleanup: No user activity for 10 minutes, cleaning audio');
+    console.log("🧹 Idle cleanup: No user activity for 10 minutes, cleaning audio");
     if (audioRegistryRef.current) {
       audioRegistryRef.current.cleanupAllAudio();
     }
@@ -287,24 +290,22 @@ function RootComponent() {
       clearTimeout(idleTimerRef.current);
       idleTimerRef.current = null;
     }
-    // Set new timer for 10 minutes
-    idleTimerRef.current = setTimeout(cleanupOnIdle, 600000); // 10 minutes
+    idleTimerRef.current = setTimeout(cleanupOnIdle, 600000); // 10 min
   }, [cleanupOnIdle]);
 
   // ─── 🔥 USER ACTIVITY HANDLERS ──────────────────────────────
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
-    // Reset timer on any user activity
-    const events = ['click', 'touchstart', 'mousemove', 'keydown', 'scroll'];
+    const events = ["click", "touchstart", "mousemove", "keydown", "scroll"];
     const handleUserActivity = () => resetIdleTimer();
 
-    events.forEach(event => {
+    events.forEach((event) => {
       document.addEventListener(event, handleUserActivity, { passive: true });
     });
 
     return () => {
-      events.forEach(event => {
+      events.forEach((event) => {
         document.removeEventListener(event, handleUserActivity);
       });
       if (idleTimerRef.current) {
@@ -316,78 +317,68 @@ function RootComponent() {
 
   // ─── 🔥 VISIBILITY CHANGE HANDLER ──────────────────────────
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        console.log('🔇 Tab hidden — cleaning all audio');
+        console.log("🔇 Tab hidden — cleaning all audio");
         if (audioRegistryRef.current) {
           audioRegistryRef.current.cleanupAllAudio();
         }
       } else {
-        // Tab becomes visible again — reset idle timer
         resetIdleTimer();
       }
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [resetIdleTimer]);
 
   // ─── 🔥 BEFORE UNLOAD CLEANUP ─────────────────────────────
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     const handleBeforeUnload = () => {
-      console.log('🔇 Page unloading — cleaning all audio');
+      console.log("🔇 Page unloading — cleaning all audio");
       if (audioRegistryRef.current) {
         audioRegistryRef.current.cleanupAllAudio();
       }
     };
 
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
 
   // ─── 🔥 INITIALIZATION ──────────────────────────────────────
   useEffect(() => {
-    // 🔥 Only run in browser
-    if (typeof window === 'undefined') return;
-    
-    // 🔥 Prevent double initialization
+    if (typeof window === "undefined") return;
     if (isInitializedRef.current) return;
     isInitializedRef.current = true;
 
-    // 🔥 Initialize global audio registry
     const registry = createAudioRegistry();
     audioRegistryRef.current = registry;
-    
-    // 🔥 Expose to window for all components
+
     window.__lessonAudioCleanup = {
       registerAudio: registry.registerAudio,
       registerAudios: registry.registerAudios,
       cleanupAllAudio: registry.cleanupAllAudio,
       getActiveAudios: registry.getActiveAudios,
     };
-    
-    // 🔥 Initialize window audio array
+
     if (!window._audioElements) {
       window._audioElements = [];
     }
 
-    // 🔥 Start idle timer
     resetIdleTimer();
 
-    // 🔥 Log that audio system is ready
-    console.log('🔊 Audio registry initialized with auto-cleanup');
-    
-    // 🔥 Cleanup on unmount
+    console.log("🔊 Audio registry initialized with auto-cleanup");
+
     return () => {
       if (audioRegistryRef.current) {
         audioRegistryRef.current.cleanupAllAudio();
@@ -396,7 +387,7 @@ function RootComponent() {
         clearTimeout(idleTimerRef.current);
         idleTimerRef.current = null;
       }
-      // @ts-ignore - Clean up window property
+      // @ts-expect-error - Clean up window property
       window.__lessonAudioCleanup = undefined;
       window._audioElements = [];
     };
@@ -404,11 +395,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {showIntro ? (
-        <IntroScreen onFinish={() => setShowIntro(false)} />
-      ) : (
-        <Outlet />
-      )}
+      {showIntro ? <IntroScreen onFinish={() => setShowIntro(false)} /> : <Outlet />}
     </QueryClientProvider>
   );
 }
