@@ -213,11 +213,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+      },
       { title: "Taqseem Taleem — Fun Learning for Kids" },
       {
         name: "description",
-        content: "A playful tablet learning app for kids — English, Math and Urdu adventures.",
+        content:
+          "A playful tablet learning app for kids — English, Math and Urdu adventures.",
       },
       { property: "og:title", content: "Taqseem Taleem" },
       { property: "og:description", content: "A playful tablet learning app for kids." },
@@ -228,23 +233,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#16a34a" },
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
-      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      {
+        name: "apple-mobile-web-app-status-bar-style",
+        content: "black-translucent",
+      },
       { name: "apple-mobile-web-app-title", content: "Taqseem Taleem" },
       { name: "application-name", content: "Taqseem Taleem" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Amiri:wght@700&display=swap",
       },
       { rel: "stylesheet", href: appCss },
 
-      // 🔥 PWA / Manifest / Icons
-      { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.ico" },
-      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      // 🔥 PWA / Manifest / Icons — RELATIVE paths (GitHub Pages compatible)
+      { rel: "manifest", href: "manifest.webmanifest" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,

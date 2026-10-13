@@ -2,30 +2,55 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { VitePWA } from "vite-plugin-pwa";
 
+// ══════════════════════════════════════════════════════════════
+//  🔥 GITHUB PAGES BASE PATH
+//  Repo: https://github.com/taqseemtaleem-1/phase-1
+//  URL:  https://taqseemtaleem-1.github.io/phase-1/
+//  👉 Isliye base "/phase-1/" hai
+//
+//  Custom domain laga do (e.g. taleem.org) → base "/" karo
+// ══════════════════════════════════════════════════════════════
+const BASE_PATH = "/phase-1/";
+
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+
+  // 🔥 Ye line TanStack Start / Vite dono ko base batati hai
+  //    Iske bina GitHub Pages pe PWA nahi chalega
+  base: BASE_PATH,
+
   vite: {
     plugins: [
+      // basicSsl sirf dev server ke liye — production build pe skip
       basicSsl(),
+
       VitePWA({
         registerType: "autoUpdate",
         injectRegister: "auto",
         strategies: "generateSW",
         filename: "sw.js",
 
-        // Manifest — hum apni custom manifest file use karenge
+        // Custom manifest use kar rahe ho (public/manifest.webmanifest)
+        // Isliye VitePWA ko manifest generate nahi karna
         manifest: false,
 
-        // Offline caching
+        // ─── Workbox (offline caching) ───────────────────────
         workbox: {
           globPatterns: [
-            "**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,mp3,wav,mpeg,json}",
+            "**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,mp3,wav,mpeg,json,webmanifest}",
           ],
           maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 15 MB
-          navigateFallback: "/index.html",
+
+          // 🔥 BASE-AWARE — /phase-1/index.html pe fallback
+          //    Pehle ye "/index.html" tha → GitHub Pages pe 404 deta
+          navigateFallback: `${BASE_PATH}index.html`,
           navigateFallbackDenylist: [/^\/api/, /^\/_server/],
+
+          cleanupOutdatedCaches: true,
+          skipWaiting: true,
+          clientsClaim: true,
 
           runtimeCaching: [
             {
@@ -71,7 +96,7 @@ export default defineConfig({
         },
 
         devOptions: {
-          enabled: false, // dev mein off (Vite HMR conflicts)
+          enabled: false,
           type: "module",
         },
       }),
